@@ -1,6 +1,8 @@
+import os
 import openai
 import streamlit as st
 
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # 챗봇의 응답을 처리하는 함수
 def response(user_input_message, state_message_history):
@@ -15,6 +17,7 @@ def response(user_input_message, state_message_history):
     model='gpt-3.5-turbo',
     messages=state_message_history,
     temperature=0.2,
+    openai_api_key=OPENAI_API_KEY
   )
   
   # 응답 JSON에서 출력 텍스트를 추출
