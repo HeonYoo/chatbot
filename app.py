@@ -1,9 +1,6 @@
 import openai
 import streamlit as st
 
-import os
-
-openai_api_key = os.getenv("OPENAI_API_KEY")
 
 # 챗봇의 응답을 처리하는 함수
 def response(user_input_message, state_message_history):
